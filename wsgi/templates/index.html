@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='p5.min.js') }}"></script>
+    <title>The Tic Tac Toe</title>
+</head>
+<body>
+    <div id="container">
+        <h2>This is Page : {{ page }}</h2>
+        <ul id="players">
+            {% for player in players %}
+                <li>{{ player }}</li>
+            {% endfor %}
+        </ul>
+        <h3 id='status'>{{ condition }} : {{ verdict }} : {{ sign }}</h3>
+        <div id="game">
+            <div id="can"></div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
